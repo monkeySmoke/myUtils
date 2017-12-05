@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body class="body">
+<div id="content" style="background: #ff0000;height: 2000px">
+    <div style="background: azure; width: 100px; height: 400px">1</div>
+
+    <div id="two" style="background: azure; width: 100px; height: 400px">2</div>
+    <div style="background: azure; width: 100px; height: 800px">3</div>
+</div>
 <script src="./src/index.js"></script>
 <script>
     loadScriptString('console.log("hello, world")')
+    console.log(matchesSelector(document.body, 'body'))
+    document.querySelector('#two').scrollIntoView()
 </script>
 </body>
 </html>

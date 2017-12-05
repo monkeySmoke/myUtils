@@ -52,3 +52,22 @@ function loadStyleString(css) {
     var head = document.getElementsByTagName('head')[0]
     head.appendChild(style)
 }
+
+/**
+ * 判断selector所选元素是不是和element相同
+ * @param element
+ * @param selector
+ */
+function matchesSelector(element, selector) {
+    if (element.matchesSelector) {
+        return element.matchesSelector(selector)
+    } else if (element.msMatchesSelector) {
+        return reelement.msMatchesSelector(selector)
+    } else if (element.mozMatchesSelector) {
+       return element.mozMatchesSelector(selector)
+    } else if (element.webkitMatchesSelector) {
+        return element.webkitMatchesSelector(selector)
+    } else {
+        throw new Error ('Not supported.')
+    }
+}
